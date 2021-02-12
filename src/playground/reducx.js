@@ -147,7 +147,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
 const filtersReducerDefaultState = {
   text: '',
   sortBy: 'date',
-  startDate: undefined,
+  startDate: undefined,//will be set dynamically
   endDate: undefined
 };
 
