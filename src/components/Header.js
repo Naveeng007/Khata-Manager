@@ -3,8 +3,9 @@ import {BrowserRouter, Route,Switch,Link,NavLink} from 'react-router-dom'
 const Header=()=>(
     <div>
         <h2>Expensify</h2>
-        <NavLink to="/" activeClassName="is-active" exact={true}>To home</NavLink>
-        <NavLink to="next" activeClassName="is-active" exact={true}>Page1</NavLink>
+        <NavLink to="/" activeClassName="is-active" exact={true}>Help</NavLink>
+        <NavLink to="addexpense" activeClassName="is-active" exact={true}>CreateExpense</NavLink>
+        <NavLink to="dashboard" activeClassName="is-active" exact={true}>dashboard</NavLink>
     </div>
 )
 

@@ -3,15 +3,19 @@ import Help from './../components/Help'
 import ExpensePage from './../components/ExpensePage'
 import Header from './../components/Header'
 import NotFound from './../components/NotFound'
+import ExpenseDashboard from  '../components/ExpenseDashboard'
 import {BrowserRouter, Route,Switch,Link,NavLink} from 'react-router-dom'
+import  addExpense  from '../components/AddExpense'
 
 const AppRouter=()=>(
     <BrowserRouter>
     <div>
         <Header/>
         <Switch>
+            <Route path="/dashboard"  component={ExpenseDashboard } exact={true}/>
             <Route path="/"  component={Help } exact={true}/>
             <Route path="/next/:id"  component={ExpensePage} />
+            <Route path="/addexpense"  component={addExpense} exact={true} />
             <Route component={NotFound}/>
         </Switch>
     </div>

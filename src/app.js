@@ -12,8 +12,8 @@ import 'normalize.css/normalize.css'//used for normalizing css according to ever
 const store=configureStore()
 
 store.dispatch(addExpense({description:'water bill'}))
-store.dispatch(addExpense({description:'bizli bill'}))
-store.dispatch(setTextFilter('water'))
+store.dispatch(addExpense({description:'bizli bill', amount:555}))
+store.dispatch(addExpense({description:'rent', createdAt:100,amount:39}))
 const state=store.getState();
 
 const visibleExpenses=getVisibleExpenses(state.expenses,state.filters)
