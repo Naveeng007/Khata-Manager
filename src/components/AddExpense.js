@@ -6,7 +6,7 @@ const AddExpensePage=(props)=>(
     <div>
         <h1>Hello from AddExpensePage</h1>
         <ExpenseForm 
-        onSubmit={(expense)=>{
+        onSubmit={(expense)=>{//onSubmit this function will be calledS
             props.dispatch(addExpense(expense))
         }}/>
     </div>

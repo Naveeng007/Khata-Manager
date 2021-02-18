@@ -5,7 +5,7 @@ import 'react-dates/lib/css/_datepicker.css'
 import 'react-dates/initialize';
 
 class ExpenseForm extends React.Component{
-    constructor(props){
+    constructor(props){//we are using props which is send from another component
         super(props)
 
         this.state={
@@ -73,7 +73,7 @@ class ExpenseForm extends React.Component{
                     placeholder="text" 
                     value={this.state.description}//it will not change automatically
                     onChange={this.ChangeDescriptionState}//hence we have to write this
-                    autoFocus
+                    autoFocus//only one autoFocus can be on page
                     
                     />
                     <input
@@ -84,11 +84,11 @@ class ExpenseForm extends React.Component{
                      />
 
                    <SingleDatePicker
-                     date={this.state.createdAt}
+                     date={this.state.createdAt}//these things are written on using calendar API
                      onDateChange={this.onDateChange}
                      focused={this.state.calendarFocused}    
                      onFocusChange={this.onFocusChange}
-                     numberOfMonths={1}
+                     numberOfMonths={1}//1 month calendar will be shown
                      isOutsideRange={()=>false}//previous days now we can pick
                    
                    />

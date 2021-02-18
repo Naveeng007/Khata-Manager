@@ -8,15 +8,14 @@ const ExpenseList= (props)=>(
     <div>
         <h1>Hi </h1>
         {props.expenses.map((expense)=>{
-            return <Listitem key ={expense.id} {...expense}/>
+            return <Listitem key ={expense.id} {...expense}/>//for listitems we have to use ID
         } )}
     </div>
 )
 
 const mapStateToProps=(state)=>{
     return{
-        expenses:selectExpenses(state.expenses,state.filters)
-       
+        expenses:selectExpenses(state.expenses,state.filters)//adding expenses props to ExpenseList
     }
 }//as state will change it will re render 
 export default connect(mapStateToProps)(ExpenseList)//higher order component

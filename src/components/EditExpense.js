@@ -1,5 +1,5 @@
 import React from 'react'
-const EditExpense=()=>(
+const EditExpense=()=>(//Component to be modified or deleted
     <div>
         <h1>Hello from EditExpense</h1>
     </div>

@@ -9,7 +9,7 @@ const ExpensePage=(props)=>{//this is actually edit expense page
         <ExpenseForm 
 
          expense={props.expense}
-         onSubmit={(expense)=>{
+         onSubmit={(expense)=>{//on every submittion{props} this will call this function and redirrect it to '/'
              props.dispatch(editExpense(props.expense.id,expense))
              props.history.push('/')
              console.log('updated',expense)
@@ -27,7 +27,7 @@ const ExpensePage=(props)=>{//this is actually edit expense page
 
 const mapStateProps=(state,props)=>{
     return {
-        expense:state.expenses.find((expenses)=>{
+        expense:state.expenses.find((expenses)=>{//find by id and return that expense object
             return expenses.id===props.match.params.id
         })
     }
