@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public",
-    "build": "webpack --watch ",
+    "build:dev": "webpack --watch ",
     "build:prod": "webpack --watch --env production",
     "dev-server": "webpack serve",
     "start":"node server/server.js",
