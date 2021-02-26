@@ -8,7 +8,8 @@
     "build": "webpack --watch ",
     "build:prod": "webpack --watch --env production",
     "dev-server": "webpack serve",
-    "start":"node server/server.js"
+    "start":"node server/server.js",
+    "heroku-postbuild":"yarn run build:prod"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
