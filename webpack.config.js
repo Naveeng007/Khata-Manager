@@ -54,7 +54,8 @@ module.exports=(env)=>{
         }),
         // CSSExtract
     ],
-    devtool:isProduction?'inline-source-map':'eval-cheap-module-source-map',
+    // devtool:isProduction?'inline-source-map':'eval-cheap-module-source-map',
+     devtool:isProduction?false:'eval-cheap-module-source-map'
     // devtool:false //use it for production
     
     // devtool: 'inline-source-map',i have seen on stackoverflow for better production
