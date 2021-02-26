@@ -1,7 +1,14 @@
 //teaching webpack to do these things
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path=require('path')
 var webpack = require('webpack');
-module.exports={
+
+module.exports=(env)=>{
+    console.log(env)
+    const isProduction=env.production!==undefined
+    const CSSExtract= new ExtractTextPlugin('styles.css')//not able to work with....check for errors
+    console.log(isProduction)
+ return   {
     entry: './src/app.js',
     output: {
         path:path.join(__dirname,'public'),//this must be full path
@@ -24,6 +31,12 @@ module.exports={
             // ]
 
             test:/\.s?css/,//for scss file
+            // use:CSSExtract.extract({
+            //     use: [
+            //         'css-loader',
+            //         'sass-loader'
+            //     ]
+            // })
             use:[
                 'style-loader',//order matters
                 'css-loader',
@@ -33,18 +46,24 @@ module.exports={
             ]
         }]
     },
-    mode: 'none',
+    mode: isProduction?'production':'none',//for production mode ..do optimisation,'none' for normal mode
+
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
-        })
+            'process.env.NODE_ENV': JSON.stringify('production')//use development fro development puposes
+        }),
+        // CSSExtract
     ],
-    devtool:'eval-cheap-module-source-map',
+    devtool:isProduction?'inline-source-map':'eval-cheap-module-source-map',
+    // devtool:false //use it for production
+    
+    // devtool: 'inline-source-map',i have seen on stackoverflow for better production
 
     //if u are using webpack server then you can delete bundle.js file bz it will handle its own
     devServer:{// Webpack server is somewhat faster than live-server
         contentBase:path.join(__dirname,'public'),//when there is error of socket change port from 8080 to 8081..don't know why
         historyApiFallback:true
 
+    }
     }
 }

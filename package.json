@@ -5,8 +5,10 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public",
-    "build": "webpack --watch",
-    "dev-server": "webpack serve"
+    "build": "webpack --watch ",
+    "build:prod": "webpack --watch --env production",
+    "dev-server": "webpack serve",
+    "start":"node server/server.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -20,6 +22,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^5.0.1",
+    "express": "^4.17.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "firebase": "^8.2.9",
     "live-server": "^1.2.1",
     "moment": "^2.29.1",
