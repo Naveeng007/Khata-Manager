@@ -4,13 +4,6 @@ import database from '../firebase/firebase'
 export const addExpense = (expense) => ({//implicit return value
     type: 'ADD_EXPENSE',
     expense
-    // expense: {
-    //   id: uuidv4(),
-    //   description,
-    //   note,
-    //   amount,
-    //   createdAt
-    // }
   });
 export const F_AddExpense=(expenseData={})=>{
   return (dispatch)=>{//we are able to return dispatch due to redux-thunk
@@ -22,7 +15,7 @@ export const F_AddExpense=(expenseData={})=>{
     }=expenseData;
 
     const expense={description , Notes,Amount,createdAt};
-    console.log("data", expense);
+    console.log("AddExpense", expense);
 
     database.ref('expenses').push(expense).then((ref)=>{
      dispatch(addExpense({
@@ -46,3 +39,26 @@ export const F_AddExpense=(expenseData={})=>{
     id,
     updates
   });
+
+  //SET_EXPENSE
+
+  export const setExpenses=(expense)=>({
+    type:'SET_EXPENSE',
+    expense
+  })
+
+  export const F_setExpense=()=>{
+    return (dispatch)=>{
+        return  database.ref('expenses').once('value').then((snapshot)=>{
+          const expenses=[]
+          snapshot.forEach((snapshotChild)=>{
+            expenses.push({
+              id:snapshotChild.key,
+              ...snapshotChild.val()
+            })
+          })
+
+          dispatch(setExpenses(expenses))
+        })
+    }
+  }

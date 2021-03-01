@@ -4,7 +4,7 @@ import React from 'react'
 import {Provider} from 'react-redux'
 import AppRouter from './Router/AppRouter'
 import configureStore from './store/configureStore'
-import {addExpense} from './actions/expenses.js'
+import {F_setExpense} from './actions/expenses.js'
 import {setTextFilter} from './actions/filter.js'
 import getVisibleExpenses from './selectors/expenses'
 import './styles/style.scss'
@@ -12,13 +12,17 @@ import 'normalize.css/normalize.css'//used for normalizing css according to ever
 import './firebase/firebase.js'
 const store=configureStore()
 
-store.dispatch(addExpense({description:'water bill'}))
-store.dispatch(addExpense({description:'bizli bill', amount:555}))
-store.dispatch(addExpense({description:'rent', createdAt:100,amount:39}))
+//DUMMY values
+// store.dispatch(addExpense({description:'water bill'}))
+// store.dispatch(addExpense({description:'bizli bill', amount:555}))
+// store.dispatch(addExpense({description:'rent', createdAt:100,amount:39}))
+// const visibleExpenses=getVisibleExpenses(state.expenses,state.filters)
+// console.log(visibleExpenses)
+
+
 const state=store.getState();
 
-const visibleExpenses=getVisibleExpenses(state.expenses,state.filters)
-console.log(visibleExpenses)
+
 
 const jsx=(
     <Provider store={store}>
@@ -26,5 +30,11 @@ const jsx=(
     </Provider>
 )
 
-ReactDOM.render(jsx,document.getElementById('app'))
+ReactDOM.render(<p>Loading...</p>,document.getElementById('app'))
+
+store.dispatch(F_setExpense()).then(()=>{
+    ReactDOM.render(jsx,document.getElementById('app'))
+});
+
+
 
