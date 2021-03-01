@@ -32,6 +32,14 @@ export const F_AddExpense=(expenseData={})=>{
     type: 'REMOVE_EXPENSE',
     id
   });
+
+  export const f_removeExpense=({id}={})=>{
+    return (dispatch)=>{
+      return database.ref(`expenses/${id}`).remove().then(()=>{
+        dispatch(removeExpense({id}));//also check without braces
+      })
+    }
+  }
   
   // EDIT_EXPENSE
   export const editExpense = (id, updates) => ({
@@ -39,6 +47,14 @@ export const F_AddExpense=(expenseData={})=>{
     id,
     updates
   });
+
+  export const F_editExpense=(id,updates)=>{
+    return (dispatch)=>{
+      return database.ref(`expenses/${id}`).update(updates).then(()=>{
+        dispatch(editExpense(id,updates))
+      })
+    }
+  }
 
   //SET_EXPENSE
 
