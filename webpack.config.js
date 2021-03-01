@@ -24,12 +24,7 @@ module.exports=(env)=>{
             // },
             
         },{
-            // test: /\.css/, //this is for css
-            // use:[
-            //     'style-loader',
-            //     'css-loader'
-            // ]
-
+           
             test:/\.s?css/,//for scss file
             // use:CSSExtract.extract({
             //     use: [

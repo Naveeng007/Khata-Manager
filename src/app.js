@@ -9,7 +9,7 @@ import {setTextFilter} from './actions/filter.js'
 import getVisibleExpenses from './selectors/expenses'
 import './styles/style.scss'
 import 'normalize.css/normalize.css'//used for normalizing css according to every device and browser
-// import './firebase/firebase.js'
+import './firebase/firebase.js'
 const store=configureStore()
 
 store.dispatch(addExpense({description:'water bill'}))

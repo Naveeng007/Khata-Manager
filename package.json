@@ -8,8 +8,8 @@
     "build:dev": "webpack --watch ",
     "build:prod": "webpack  --env production",
     "dev-server": "webpack serve",
-    "start":"node server/server.js",
-    "heroku-postbuild":"yarn run build:prod"
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -38,6 +38,7 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",

@@ -11,7 +11,7 @@ class ExpenseForm extends React.Component{
         this.state={
             description:props.expense?props.expense.description:'',
             Notes:props.expense?props.expense.Notes:'',
-            Amount:props.expense?(props.expense.amount).toString():'',
+            Amount:props.expense?(props.expense.Amount).toString():'',//changed amoutn to Amount in expense.amount
             createdAt:props.expense?moment(props.expense.createdAt):moment(),
             calendarFocused:false,
             error:''
