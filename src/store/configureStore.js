@@ -1,16 +1,18 @@
 import { createStore, combineReducers ,applyMiddleware,compose} from 'redux';
+import thunk from 'redux-thunk'//passing dispatch to function...third party library to import first..check for this fact
 import expensesReducer from '../reducers/expenses'
 import filtersReducer from '../reducers/filters'
-import thunk from 'redux-thunk'
+import authReducer from '../reducers/auth'
 
-const composeEnhancers= window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+const composeEnhancers= window.__REDUX_DEVTOOLS_EXTENSION__ || compose;//developer tool for react
 
 export default ()=>{ // There can be only one default export.
 
     const store = createStore(
         combineReducers({
           expenses: expensesReducer,
-          filters: filtersReducer
+          filters: filtersReducer,
+          auth:authReducer//also check that ihese property auth: can be removed or not
         }),
 
         composeEnhancers(applyMiddleware(thunk))

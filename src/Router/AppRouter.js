@@ -1,27 +1,37 @@
 import React from 'react'
+//react-router is extra added if problem occurs remove that
+// import Createhistory from 'history/createBrowserHistory'//use lower version
 import Help from './../components/Help'
 import ExpensePage from './../components/ExpensePage'
-import Header from './../components/Header'
+
 import NotFound from './../components/NotFound'
 import ExpenseDashboard from  '../components/ExpenseDashboard'
-import {BrowserRouter, Route,Switch,Link,NavLink} from 'react-router-dom'
+import history from '../history'
+import { useHistory,BrowserRouter, Route,Switch,Link,NavLink} from 'react-router-dom'
 import  addExpense  from '../components/AddExpense'
-
+import Login from '../components/LoginPage'
+import { Router } from 'react-router';
+import  PrivateRoute  from './PrivateRoute'
+// export const history=Createhistory();
+// export const history=useHistory();
+//use react-router v3
 const AppRouter=()=>(
-    <BrowserRouter>
+    <Router history={history}>
+        {/* changed from browserhistory to upper whole */}
     <div>
-        <Header/>
+        
         <Switch>
-            <Route path="/"  component={ExpenseDashboard } exact={true}/>
-            <Route path="/help"  component={Help } exact={true}/>
-            <Route path="/addexpense"  component={addExpense} exact={true} />
-            <Route path="/edit/:id"  component={ExpensePage} exact={true} />
+            <Route path="/"  component={Login } exact={true}/>
+            <PrivateRoute path="/dashboard"  component={ExpenseDashboard } exact={true}/>
+            <Route path="/help"  component={Help } />
+            <PrivateRoute path="/addexpense"  component={addExpense}  />
+            <PrivateRoute path="/edit/:id"  component={ExpensePage}  />
 
             <Route component={NotFound}/>
         </Switch>
     </div>
        
-    </BrowserRouter>
+    </Router>
 )
 
 export default AppRouter

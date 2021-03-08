@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {DateRangePicker} from 'react-dates'
 import {setTextFilter,sortByAmount,sortByDate,setStartDate,setEndDate} from '../actions/filter'
 import 'react-dates/initialize'
-class ListFilters extends React.Component{
+class ListFilters extends React.Component{//components have their own states but not in case of stateless component
     state={
         calendarFocused:null
     }
@@ -26,7 +26,7 @@ class ListFilters extends React.Component{
                 }}/>
         
                 <select
-                    value={this.props.filters.sortBy}
+                    value={this.props.filters.sortBy}//u can only change it when you change main store state using dispatch
                     onChange={(e)=>{
                         if(e.target.value==='amount'){
                             this.props.dispatch(sortByAmount())

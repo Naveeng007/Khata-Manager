@@ -15,7 +15,7 @@ import {connect} from 'react-redux'
 
 export class AddExpensePage extends React.Component{
     onSubmit=(expense)=>{
-        this.props.F_AddExpense(expense);
+        this.props.F_AddExpense(expense);//
         this.props.history.push('/')//optional
     }
 
@@ -32,7 +32,7 @@ export class AddExpensePage extends React.Component{
 }
 
 const MapDispatchToProps=(dispatch)=>({
-    F_AddExpense: (expense)=>dispatch(F_AddExpense(expense))
+    F_AddExpense: (expense)=>dispatch(F_AddExpense(expense))//in js any function we treat as an object and hence passing as props
 });
 
  export default connect(undefined,MapDispatchToProps)(AddExpensePage) 

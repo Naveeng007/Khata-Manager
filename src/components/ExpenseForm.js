@@ -6,7 +6,7 @@ import 'react-dates/initialize';
 
 class ExpenseForm extends React.Component{
     constructor(props){//we are using props which is send from another component
-        super(props)
+        super(props)//CHECK OR may be reason for super....because of inheritance type feature first u have to pass the arguments to base class using super
 
         this.state={
             description:props.expense?props.expense.description:'',
@@ -20,7 +20,7 @@ class ExpenseForm extends React.Component{
     }
     ChangeDescriptionState=(e)=>{
             const description=e.target.value
-            this.setState(()=>({description}))
+            this.setState(()=>({description}))//new state seted
         }
     ChangeNotesState=(e)=>{
         // const Notes=e.target.value
@@ -54,7 +54,7 @@ class ExpenseForm extends React.Component{
             this.setState(()=>({error:''}))
             this.props.onSubmit({
                 description:this.state.description,
-                Amount:parseFloat(this.state.Amount,10)*100,
+                Amount:parseFloat(this.state.Amount,10)*100,//check for reason
                 createdAt:this.state.createdAt.valueOf(),
                 Notes:this.state.Notes
             })
