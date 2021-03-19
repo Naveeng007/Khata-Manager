@@ -67,7 +67,7 @@ class ExpenseForm extends React.Component{
                 {this.state.error&&<p>{this.state.error}</p>}
                 <h1>Add or Edit Expenses</h1>
                 <form onSubmit={this.onSubmit} className="expense-form">
-                    <input 
+                    <input className="form-items"
 
                     type="text" 
                     placeholder="text" 
@@ -76,14 +76,14 @@ class ExpenseForm extends React.Component{
                     autoFocus//only one autoFocus can be on page
                     
                     />
-                    <input
+                    <input className="form-items"
                      type="number" 
                      placeholder="Amount" 
                      value={this.state.Amount}
                     onChange={this.ChangeAmountState}
                      />
 
-                   <SingleDatePicker
+                   <SingleDatePicker className="form-items"
                      date={this.state.createdAt}//these things are written on using calendar API
                      onDateChange={this.onDateChange}
                      focused={this.state.calendarFocused}    
@@ -92,7 +92,7 @@ class ExpenseForm extends React.Component{
                      isOutsideRange={()=>false}//previous days now we can pick
                    
                    />
-                   <textarea
+                   <textarea className="form-items"
                    
                    value={this.state.Notes}
                     onChange={this.ChangeNotesState}

@@ -4,10 +4,18 @@ import ExpenseList from './expenseList'
 import ListFilters from './ExpenseListFilters'
  const ExpenseDashboard=()=>(
     <div className = 'Dashboard'>
+     
+      <Link to="addexpense" className ="Create-button" exact={true}>  CreateExpense </Link>
+      <h1>Expense List </h1>
+      {/* <div className = 'listfilters'> */}
+         <ListFilters/>
+      {/* </div> */}
+
       
-       <Link to="addexpense"  exact={true}> <button className ="Create-button">CreateExpense</button></Link>
-       <ListFilters/>
-       <ExpenseList/>
+         <ExpenseList/>
+      
+      
+      
     </div>
  )
 

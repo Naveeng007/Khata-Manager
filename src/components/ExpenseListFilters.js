@@ -19,13 +19,13 @@ class ListFilters extends React.Component{//components have their own states but
     render(){
       return  (
     
-            <div>
-                <input type="text" value={this.props.filters.text} onChange={(e)=>{
+            <div className = "filters">
+                <input className = "filter-value" type="text" placeholder = "search item"value={this.props.filters.text} onChange={(e)=>{
                     this.props.dispatch(setTextFilter(e.target.value))
                    
                 }}/>
         
-                <select
+                <select className = "filter-value"
                     value={this.props.filters.sortBy}//u can only change it when you change main store state using dispatch
                     onChange={(e)=>{
                         if(e.target.value==='amount'){
@@ -39,7 +39,7 @@ class ListFilters extends React.Component{//components have their own states but
                     <option value='date'>Date</option>
                     <option value='amount'>Amount</option>
                 </select>
-                    <DateRangePicker
+                    <DateRangePicker className = "filter-value"
                         startDate={this.props.filters.startDate}
                         endDate={this.props.filters.endDate}
                         onDatesChange={this.onDatesChange}

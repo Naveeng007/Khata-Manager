@@ -23,10 +23,11 @@ const AppRouter=()=>(
         
         <Switch>
             <PublicRoute path="/"  component={Login } exact={true}/>
+            <PrivateRoute path="/edit/:id"  component={ExpensePage} exact= { true } />
             <PrivateRoute path="/dashboard"  component={ExpenseDashboard } exact={true}/>
             {/* <Route path="/help"  component={Help } /> */}
             <PrivateRoute path="/addexpense"  component={addExpense} exact={true} />
-            <PrivateRoute path="/edit/:id"  component={ExpensePage} exact= { true } />
+            
             <Route component={NotFound}/>
         </Switch>
     </div>
