@@ -63,10 +63,10 @@ class ExpenseForm extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="addexpense" >
                 {this.state.error&&<p>{this.state.error}</p>}
-                <h1>from Expense Form</h1>
-                <form onSubmit={this.onSubmit}>
+                <h1>Add or Edit Expenses</h1>
+                <form onSubmit={this.onSubmit} className="expense-form">
                     <input 
 
                     type="text" 

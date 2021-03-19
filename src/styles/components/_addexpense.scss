@@ -1,0 +1,35 @@
+.addexpense{
+    display:flex;
+    flex-direction:column;
+    
+    // border: 2px solid red;
+    justify-content : center;
+    height : 500px;
+
+    h1{
+        align-self: center;
+    }
+
+    
+}
+
+.expense-form{
+    display:flex;
+    flex-direction:column;
+    input{
+       
+        padding:30px;
+       
+    }
+
+    button{
+        width: 100px;
+        height: 40px;
+        align-self: center;
+        cursor: pointer;
+        border:none;
+        color: white;
+        background-color: #2777E8;
+        border-radius: 4px;
+    }
+}

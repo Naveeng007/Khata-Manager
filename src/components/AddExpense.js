@@ -22,7 +22,7 @@ export class AddExpensePage extends React.Component{
     render(){
         return(
             <div>
-                <h1>Hello from AddExpensePage </h1>
+               
                 <ExpenseForm 
                     onSubmit={this.onSubmit}
                 />

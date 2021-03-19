@@ -1,3 +1,10 @@
 @import './base/setting';//order matters..import  topologically
 @import './base/base';//partial imported without underscore
+@import './components/button';
 @import './components/header';
+@import './components/box-layout';
+@import './components/dashboard';
+@import './components/listitems';
+@import './components/addexpense';
+
+

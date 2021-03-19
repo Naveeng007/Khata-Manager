@@ -7,7 +7,7 @@ import ExpensePage from './../components/ExpensePage'
 import NotFound from './../components/NotFound'
 import ExpenseDashboard from  '../components/ExpenseDashboard'
 import history from '../history'
-import { useHistory,BrowserRouter, Route,Switch,Link,NavLink} from 'react-router-dom'
+import { Route,Switch} from 'react-router-dom'
 import  addExpense  from '../components/AddExpense'
 import Login from '../components/LoginPage'
 import { Router } from 'react-router';
@@ -24,10 +24,9 @@ const AppRouter=()=>(
         <Switch>
             <PublicRoute path="/"  component={Login } exact={true}/>
             <PrivateRoute path="/dashboard"  component={ExpenseDashboard } exact={true}/>
-            <Route path="/help"  component={Help } />
-            <PrivateRoute path="/addexpense"  component={addExpense}  />
-            <PrivateRoute path="/edit/:id"  component={ExpensePage}  />
-
+            {/* <Route path="/help"  component={Help } /> */}
+            <PrivateRoute path="/addexpense"  component={addExpense} exact={true} />
+            <PrivateRoute path="/edit/:id"  component={ExpensePage} exact= { true } />
             <Route component={NotFound}/>
         </Switch>
     </div>

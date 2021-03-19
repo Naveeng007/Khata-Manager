@@ -12,6 +12,7 @@ import 'normalize.css/normalize.css'//used for normalizing css according to ever
 import {firebase} from './firebase/firebase'
 const store=configureStore()
 import { useHistory,BrowserRouter, Route,Switch,Link,NavLink} from 'react-router-dom'
+import  { List } from "react-content-loader";
 
 import history from "./history";
 // function Navigation(props) {
@@ -29,7 +30,7 @@ import history from "./history";
 
 
 const state=store.getState();
-
+console.log(state)
 
 
 const jsx=(
@@ -48,7 +49,23 @@ const RenderApp=()=>{
     }
 }
 
-ReactDOM.render(<p>Loading...</p>,document.getElementById('app'))
+
+
+
+  
+  const MyListLoader = () => <List />
+  
+  const App = () => (
+    <>
+      <MyListLoader />
+    </>
+  );
+
+
+
+
+
+ReactDOM.render(<App/>,document.getElementById('app'))
 
 
 firebase.auth().onAuthStateChanged((user)=>{

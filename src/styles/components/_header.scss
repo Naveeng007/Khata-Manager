@@ -11,3 +11,21 @@
     margin: 2rem;
 
 }
+.navbar{
+    display: flex;
+    width: 100vw;
+    justify-content:space-between;
+    height: 50px;
+    align-items: center;
+    position: relative;
+    background-color:#2777E8 ;
+    margin: 0px;
+    margin-bottom: 10px;
+    
+}
+.header-title{
+   color:white;
+}
+// .logout-button{
+//     margin-left: 85%;
+// }
