@@ -3,7 +3,7 @@ import moment from 'moment'
 
 const filtersReducerDefaultState = {
     text: '',
-    sortBy: 'date',
+    sortBy: 'amount',//initially date
     startDate: moment().startOf('month'),//check documentation
     endDate: moment().endOf('month')
   };
@@ -16,6 +16,7 @@ export default (state = filtersReducerDefaultState, action) => {
           text: action.text
         };
       case 'SORT_BY_AMOUNT':
+        console.log(state)
         return {
           ...state,
           sortBy: 'amount'

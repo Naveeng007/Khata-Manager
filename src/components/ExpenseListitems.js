@@ -10,7 +10,7 @@ const Listitem=({id,description,Amount,createdAt})=>(
         </Link>
         
         <h5 className = 'listitem-values'>₹{Amount}</h5>
-        <h5 className = 'listitem-values'>{formatRelative(subDays(new Date(createdAt), 3), new Date(createdAt))}</h5>
+        <h5 className = 'listitem-values'>{format(new Date(createdAt), 'PPPP') }</h5>
       
     </div>
 )

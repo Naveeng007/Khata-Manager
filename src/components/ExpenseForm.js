@@ -52,9 +52,10 @@ class ExpenseForm extends React.Component{
         }
         else{
             this.setState(()=>({error:''}))
+            
             this.props.onSubmit({
                 description:this.state.description,
-                Amount:parseFloat(this.state.Amount,10)*100,//check for reason
+                Amount:parseFloat(this.state.Amount,10),//check for reason
                 createdAt:this.state.createdAt.valueOf(),
                 Notes:this.state.Notes
             })

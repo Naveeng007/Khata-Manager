@@ -32,6 +32,7 @@ class ListFilters extends React.Component{//components have their own states but
                             this.props.dispatch(sortByAmount())
                         }
                         else if(e.target.value==='date'){
+                            console.log(e.target.value);
                             this.props.dispatch(sortByDate())
                         }
                     }}
@@ -51,6 +52,7 @@ class ListFilters extends React.Component{//components have their own states but
                         startDateId="startDateId"//as added by maker of DateRangepicker...some confusion here like why?
                          endDateId="endDateId"//bz to make it different from SingleDatePicker
                     />
+                    
             </div>
             
         );
